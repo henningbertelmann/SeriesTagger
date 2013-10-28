@@ -53,5 +53,17 @@
          </menu>
       </menuContribution>
    </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            name="Series Tagger">
+         <property
+               name="appName"
+               value="Series Tagger">
+         </property>
+      </product>
+   </extension>
 
 </plugin>
