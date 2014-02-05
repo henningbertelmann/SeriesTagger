@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmlns:ui="http://www.eclipse.org/ui/2010/UIModel/application/ui" xmi:id="_iDvV4FAtEeO_loYmwT_FIw" elementId="org.eclipse.e4.ide.application" bindingContexts="_iDvV4VAtEeO_loYmwT_FIw">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_iDvV91AtEeO_loYmwT_FIw" label="SeriesTagger3" width="500" height="400">
+    <tags>shellMaximized</tags>
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_iDvV_1AtEeO_loYmwT_FIw">
+      <children xsi:type="advanced:Perspective" xmi:id="_iDvWAFAtEeO_loYmwT_FIw">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_iDvWAVAtEeO_loYmwT_FIw">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_-fRiYFAtEeO_loYmwT_FIw" elementId="seriestagger3.partsashcontainer.0" horizontal="true">
+            <children xsi:type="basic:Part" xmi:id="_InehcFAuEeO_loYmwT_FIw" elementId="seriestagger3.part.UnmatchedFiles" contributionURI="bundleclass://SeriesTagger3/seriesTagger.views.UnmatchedFilesPart" label="UnmatchedFiles"/>
+            <children xsi:type="basic:Part" xmi:id="_JFO0cFAuEeO_loYmwT_FIw" elementId="seriestagger3.part.Series" contributionURI="bundleclass://SeriesTagger3/seriesTagger.views.SeriesView" label="Series">
+              <menus xsi:type="menu:PopupMenu" xmi:id="_obqnIF2oEeOL1p0aUOvYeg" elementId="seriestagger.popupmenu.episode">
+                <children xsi:type="menu:DirectMenuItem" xmi:id="_wtJ8MF2oEeOL1p0aUOvYeg" elementId="seriestagger.directmenuitem.0" label="Save Series" contributionURI="bundleclass://SeriesTagger3/seriesTagger.handlers.SaveHandler">
+                  <visibleWhen xsi:type="ui:CoreExpression" xmi:id="_6SmIQF2vEeOL1p0aUOvYeg" coreExpressionId="SeriesTagger.save.episode.expression"/>
+                </children>
+                <children xsi:type="menu:HandledMenuItem" xmi:id="_Im_MMF22EeOL1p0aUOvYeg" elementId="seriestagger.handledmenuitem.0">
+                  <parameters xmi:id="_LBkYQF22EeOL1p0aUOvYeg" elementId="seriestagger.parameter.0"/>
+                </children>
+              </menus>
+            </children>
+          </children>
+          <children xsi:type="basic:Part" xmi:id="_AkbRAFAuEeO_loYmwT_FIw" elementId="seriestagger3.part.DetailViewer" contributionURI="bundleclass://SeriesTagger3/seriesTagger.views.DetailsView" label="Details"/>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_iDvV-FAtEeO_loYmwT_FIw" elementId="menu:org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_iDvV-VAtEeO_loYmwT_FIw" label="File"/>
+      <children xsi:type="menu:Menu" xmi:id="_iDvV_VAtEeO_loYmwT_FIw" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_iDvV_lAtEeO_loYmwT_FIw" label="About" command="_iDvV9FAtEeO_loYmwT_FIw"/>
+      </children>
+    </mainMenu>
+    <trimBars xmi:id="_iDvWA1AtEeO_loYmwT_FIw">
+      <children xsi:type="menu:ToolBar" xmi:id="_iDvWBFAtEeO_loYmwT_FIw" elementId="toolbar:org.eclipse.ui.main.toolbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_iDvWBVAtEeO_loYmwT_FIw" iconURI="platform:/plugin/SeriesTagger3/icons/File-Movies-icon.png" command="_iDvV7lAtEeO_loYmwT_FIw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_iDvWBlAtEeO_loYmwT_FIw" iconURI="platform:/plugin/SeriesTagger3/icons/tv-icon.png" command="_iDvV8VAtEeO_loYmwT_FIw"/>
+      </children>
+    </trimBars>
+  </children>
+  <handlers xmi:id="_iDvV61AtEeO_loYmwT_FIw" contributionURI="bundleclass://SeriesTagger3/seriesTagger.handlers.QuitHandler" command="_iDvV6lAtEeO_loYmwT_FIw"/>
+  <handlers xmi:id="_iDvV71AtEeO_loYmwT_FIw" contributionURI="bundleclass://SeriesTagger3/seriesTagger.handlers.OpenFilesHandler" command="_iDvV7lAtEeO_loYmwT_FIw"/>
+  <handlers xmi:id="_iDvV8lAtEeO_loYmwT_FIw" contributionURI="bundleclass://SeriesTagger3/seriesTagger.handlers.OpenSeriesHandler" command="_iDvV8VAtEeO_loYmwT_FIw"/>
+  <handlers xmi:id="_iDvV9VAtEeO_loYmwT_FIw" contributionURI="bundleclass://SeriesTagger3/seriesTagger.handlers.AboutHandler" command="_iDvV9FAtEeO_loYmwT_FIw"/>
+  <bindingTables xmi:id="_iDvV7FAtEeO_loYmwT_FIw" bindingContext="_iDvV4VAtEeO_loYmwT_FIw">
+    <bindings xmi:id="_iDvV7VAtEeO_loYmwT_FIw" keySequence="M1+Q" command="_iDvV6lAtEeO_loYmwT_FIw"/>
+    <bindings xmi:id="_iDvV8FAtEeO_loYmwT_FIw" keySequence="M1+O" command="_iDvV7lAtEeO_loYmwT_FIw"/>
+    <bindings xmi:id="_iDvV81AtEeO_loYmwT_FIw" keySequence="M1+S" command="_iDvV8VAtEeO_loYmwT_FIw"/>
+    <bindings xmi:id="_iDvV9lAtEeO_loYmwT_FIw" keySequence="M1+A" command="_iDvV9FAtEeO_loYmwT_FIw"/>
+  </bindingTables>
+  <rootContext xmi:id="_iDvV4VAtEeO_loYmwT_FIw" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_iDvV4lAtEeO_loYmwT_FIw" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_iDvV41AtEeO_loYmwT_FIw" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_iDvV6lAtEeO_loYmwT_FIw" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
+  <commands xmi:id="_iDvV7lAtEeO_loYmwT_FIw" elementId="SeriesTagger3.open" commandName="openFilesCommand"/>
+  <commands xmi:id="_iDvV8VAtEeO_loYmwT_FIw" elementId="org.eclipse.ui.file.save" commandName="openSeriesCommand"/>
+  <commands xmi:id="_iDvV9FAtEeO_loYmwT_FIw" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <addons xmi:id="_iDvV5FAtEeO_loYmwT_FIw" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_iDvV5VAtEeO_loYmwT_FIw" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_iDvV5lAtEeO_loYmwT_FIw" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_iDvV51AtEeO_loYmwT_FIw" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_iDvV6FAtEeO_loYmwT_FIw" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_iDvV6VAtEeO_loYmwT_FIw" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>
