@@ -12,7 +12,6 @@ import seriesTagger.datamodel.DataModel.EpguideSerie;
 import seriesTagger.datamodel.DataModel.Series;
 import seriesTagger.datamodel.EpguideSeriesContentProvider;
 import seriesTagger.datamodel.EpguideSeriesLabelProvider;
-import seriesTagger.datamodel.SeriesLabelProvider;
 import seriesTagger.read.ReadFromInternet;
 
 /* This Handler opens a Dialog that lets you choose your series. */
@@ -37,8 +36,17 @@ public class OpenSeriesHandler {
 		}
 		Object[] result = dialog.getResult();
 		for (Object r : result) {
-			System.out.println(SeriesLabelProvider.SeriesToString(r));
+			System.out.println(EpguideSeriesLabelProvider.SeriesToString(r));
 		}
+
+		// read now the corresponding episode form the internet
+
+		// put the data back
+		/*
+		 * for (String s : dialog.getFileNames()) {
+		 * ModelService3.getInstance().addFile(new File(s)); }
+		 * eventBroker.send(AppConstants.NEW_FILES_EVENT, null);
+		 */
 
 	}
 }

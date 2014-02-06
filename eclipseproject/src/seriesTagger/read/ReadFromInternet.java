@@ -23,28 +23,16 @@ public class ReadFromInternet {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// SeriesTree seriesList = readfromInternet2();
-		// System.out.println(seriesList);
-		/*
-		 * String csvFilename = "C:\\sample.csv"; try { CSVReader csvReader =
-		 * new CSVReader(new FileReader(csvFilename)); String[] row = null;
-		 * while ((row = csvReader.readNext()) != null) {
-		 * System.out.println(row[0] + " # " + row[1] + " #  " + row[2]); } //
-		 * ... csvReader.close(); } catch (Exception e) {
-		 * 
-		 * }
-		 */
-		List<EpguideSerie> ls = getEpguideSeries();
-		System.out.println(ls);
+		List<String> ls = getEpguidesEpisode(8511);
+		for (String s : ls)
+			System.out.println(s);
 	}
 
+	/* Get a list from all the series catagolized at epguides.com */
 	public static List<EpguideSerie> getEpguideSeries() {
 		URL url;
-		URL SingleSeriesUrl;
-		URLConnection conn2;
 		URLConnection conn = null;
 		BufferedReader br = null;
-		String inputLine;
 
 		ArrayList<EpguideSerie> seriesList = new ArrayList<EpguideSerie>();
 		String a = "http://epguides.com/common/allshows.txt";
@@ -92,6 +80,56 @@ public class ReadFromInternet {
 
 		return seriesList;
 
+	}
+
+	public static List<String> getEpguidesEpisode(int tvrage) {
+		URL url;
+		URLConnection conn = null;
+		BufferedReader br = null;
+
+		ArrayList<String> seriesList = new ArrayList<String>();
+		String a = "http://epguides.com/common/exportToCSV.asp?rage=" + tvrage;
+		System.out.println(a);
+		try {
+			url = new URL(a);
+			conn = url.openConnection();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			br = new BufferedReader(
+					new InputStreamReader(conn.getInputStream()));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		String[] row = null;
+
+		try {
+			CSVReader csvReader = new CSVReader(br, ',', '"', 8);
+			List content = csvReader.readAll();
+
+			for (Object object : content) {
+				row = (String[]) object;
+				try {
+					seriesList.add(row[5]);
+				} catch (Exception e) {
+
+				}
+
+			}
+			// ...
+			csvReader.close();
+		} catch (Exception e) {
+
+		}
+
+		return seriesList;
 	}
 
 	public static List<Series> readfromInternet() {

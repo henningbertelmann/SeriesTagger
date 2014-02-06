@@ -81,9 +81,6 @@ public class SeriesView {
 
 		});
 
-		// menuService.registerContextMenu(treeViewer.getTree(),"seriestagger.popupmenu.episode"
-		// );
-
 		treeViewer.getTree().addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) {
