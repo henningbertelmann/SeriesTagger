@@ -33,79 +33,20 @@ public class DataModel {
 
 	}
 
-	public static class Season {
-		int number;
-		List<Episode> episodesList;
+	
 
-	}
-
-	public static class Series {
-		public String name;
-		public List<Season> seasonsList;
-
-		public String getName() {
-			return name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-	}
-
-	public static List<Series> exampleList() {
-		Episode e1 = new Episode();
-		e1.episode_number = 1;
-		e1.title = "Die erste Episode";
-		Episode e2 = new Episode();
-		e2.episode_number = 2;
-		e2.title = "Die erste Episode";
-		Season s1 = new Season();
-		s1.number = 1;
-		s1.episodesList = new ArrayList<Episode>();
-		s1.episodesList.add(e1);
-		s1.episodesList.add(e2);
-		Series bigbang = new Series();
-		bigbang.name = "Big Bang Theory";
-		bigbang.seasonsList = new ArrayList<>();
-		bigbang.seasonsList.add(s1);
-
-		Episode e3 = new Episode();
-		e3.episode_number = 1;
-		e3.title = "Die erste Episode";
-		Episode e4 = new Episode();
-		e4.episode_number = 2;
-		e4.title = "Die erste Episode";
-		Season s2 = new Season();
-		s2.episodesList = new ArrayList<Episode>();
-		s2.episodesList.add(e3);
-		s2.episodesList.add(e4);
-		bigbang.seasonsList.add(s2);
-
-		Series howIMetYourMother = new Series();
-		howIMetYourMother.name = "How I met your mother";
-		howIMetYourMother.seasonsList = new ArrayList<>();
-		howIMetYourMother.seasonsList.add(s1);
-		howIMetYourMother.seasonsList.add(s2);
-
-		ArrayList<Series> ret = new ArrayList<>();
-		ret.add(howIMetYourMother);
-		ret.add(bigbang);
-		return ret;
-	}
+	
 
 	public List<File> fileList;
-	public List<Series> seriesList;
 	public List<Episode> episodesList;
 
 	public DataModel() {
 		this.fileList = new ArrayList<File>();
-		this.seriesList = exampleList();
 		this.episodesList = new ArrayList<Episode>();
 		this.episodesList.add(new Episode(1, 1, "the one with the pilot",
 				"Friends"));
 		this.episodesList.add(new Episode(1, 2, "the one with the second",
 				"Friends"));
-		// develop begonnen
 	}
 
 	public void addFile(File f) {

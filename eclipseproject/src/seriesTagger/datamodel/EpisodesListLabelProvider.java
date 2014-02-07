@@ -5,8 +5,6 @@ package seriesTagger.datamodel;
 import org.eclipse.jface.viewers.LabelProvider;
 
 import seriesTagger.datamodel.DataModel.Episode;
-import seriesTagger.datamodel.DataModel.Season;
-import seriesTagger.datamodel.DataModel.Series;
 
 public class EpisodesListLabelProvider extends LabelProvider {
 	

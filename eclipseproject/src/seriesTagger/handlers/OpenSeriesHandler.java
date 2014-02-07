@@ -12,7 +12,6 @@ import org.eclipse.ui.dialogs.ElementTreeSelectionDialog;
 import seriesTagger.AppConstants;
 import seriesTagger.datamodel.DataModel.EpguideSerie;
 import seriesTagger.datamodel.DataModel.Episode;
-import seriesTagger.datamodel.DataModel.Series;
 import seriesTagger.datamodel.EpguideSeriesContentProvider;
 import seriesTagger.datamodel.EpguideSeriesLabelProvider;
 import seriesTagger.datamodel.ModelService;
@@ -27,7 +26,6 @@ public class OpenSeriesHandler {
 			InterruptedException {
 		final IEclipseContext pmContext = context.createChild();
 
-		List<Series> seriesList = ReadFromInternet.readfromInternet();
 		List<EpguideSerie> ls = ReadFromInternet.getEpguideSeries();
 		ElementTreeSelectionDialog dialog = new ElementTreeSelectionDialog(
 				shell, new EpguideSeriesLabelProvider(),
