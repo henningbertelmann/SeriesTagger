@@ -29,7 +29,13 @@ public class OpenFilesHandler {
 		FileDialog dialog = new FileDialog(shell,SWT.MULTI);
 		dialog.open();
 		for(String s : dialog.getFileNames()){
-			ModelService.getInstance().addFile(new File(s));
+			String wholepath = dialog.getFilterPath() + "/" + s;
+			File f = new File(wholepath);
+			System.out.println(wholepath);
+			System.out.println(f.exists() + " sollte true sein");
+			assert(f.exists());
+			
+			ModelService.getInstance().addFile(f);
 		}
 		eventBroker.send(AppConstants.NEW_FILES_EVENT, null);
 		for(File f : ModelService.getInstance().fileList) System.out.println(f.toString());

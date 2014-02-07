@@ -5,7 +5,7 @@ public class AppConstants {
 	public static final String UNMATCHED_FILES_SELECTED = "onUnmatchedFilesSelected";
 	public static final String EPISODE_SELECTED = "onEpisodeSelected";
 	public static final String MATCH_FILE_EVENT = "onFileMatchedEvent";
-	public static final String VIDEOS_ROOT_FOLDER = "/home/martin/videos";
+	public static final String VIDEOS_ROOT_FOLDER = "/home/martin/Videos";
 
 	// this event occurs when a new list of episodes is loaded and should be
 	// displayed in the episode pane
