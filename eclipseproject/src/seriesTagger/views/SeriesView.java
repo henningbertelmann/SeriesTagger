@@ -28,8 +28,8 @@ import org.eclipse.swt.widgets.TreeItem;
 import seriesTagger.AppConstants;
 import seriesTagger.datamodel.DataModel.Episode;
 import seriesTagger.datamodel.EpisodesListContentProvider;
-import seriesTagger.datamodel.ModelService3;
-import seriesTagger.datamodel.SeriesLabelProvider;
+import seriesTagger.datamodel.ModelService;
+import seriesTagger.datamodel.EpisodesListLabelProvider;
 import seriesTagger.dnd.MyDropListener;
 
 public class SeriesView {
@@ -53,8 +53,8 @@ public class SeriesView {
 
 		treeViewer = new TreeViewer(seriesComposite, SWT.BORDER);
 		treeViewer.setContentProvider(new EpisodesListContentProvider());
-		treeViewer.setLabelProvider(new SeriesLabelProvider());
-		treeViewer.setInput(ModelService3.getInstance().episodesList);
+		treeViewer.setLabelProvider(new EpisodesListLabelProvider());
+		treeViewer.setInput(ModelService.getInstance().episodesList);
 		int operations = DND.DROP_COPY | DND.DROP_MOVE;
 		Transfer[] transferTypes = new Transfer[] { TextTransfer.getInstance() };
 		treeViewer.addDropSupport(operations, transferTypes,
@@ -110,7 +110,7 @@ public class SeriesView {
 	public void onFileMatched(
 			@UIEventTopic(AppConstants.MATCH_FILE_EVENT) Object data) {
 		System.out.println(data);
-		treeViewer.setInput(ModelService3.getInstance().episodesList);
+		treeViewer.setInput(ModelService.getInstance().episodesList);
 
 	}
 
@@ -119,7 +119,7 @@ public class SeriesView {
 	public void onEpisodeListLoaded(
 			@UIEventTopic(AppConstants.EPISODE_LIST_LOADED) Object data) {
 		System.out.println(data);
-		treeViewer.setInput(ModelService3.getInstance().episodesList);
+		treeViewer.setInput(ModelService.getInstance().episodesList);
 
 	}
 

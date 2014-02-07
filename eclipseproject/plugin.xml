@@ -5,11 +5,11 @@
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
-            name="SeriesTagger3"
+            name="SeriesTagger"
             application="org.eclipse.e4.ui.workbench.swt.E4Application">
          <property
                name="appName"
-               value="SeriesTagger3">
+               value="SeriesTagger">
          </property>
          <property
                name="applicationXMI"

@@ -15,7 +15,7 @@ import org.eclipse.swt.widgets.Shell;
 
 
 import seriesTagger.AppConstants;
-import seriesTagger.datamodel.ModelService3;
+import seriesTagger.datamodel.ModelService;
 
 
 public class OpenFilesHandler {
@@ -29,9 +29,9 @@ public class OpenFilesHandler {
 		FileDialog dialog = new FileDialog(shell,SWT.MULTI);
 		dialog.open();
 		for(String s : dialog.getFileNames()){
-			ModelService3.getInstance().addFile(new File(s));
+			ModelService.getInstance().addFile(new File(s));
 		}
 		eventBroker.send(AppConstants.NEW_FILES_EVENT, null);
-		for(File f : ModelService3.getInstance().fileList) System.out.println(f.toString());
+		for(File f : ModelService.getInstance().fileList) System.out.println(f.toString());
 	}
 }

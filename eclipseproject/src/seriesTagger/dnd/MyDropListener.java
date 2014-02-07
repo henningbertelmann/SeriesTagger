@@ -9,7 +9,7 @@ import org.eclipse.swt.dnd.TransferData;
 
 import seriesTagger.AppConstants;
 import seriesTagger.datamodel.DataModel.Episode;
-import seriesTagger.datamodel.ModelService3;
+import seriesTagger.datamodel.ModelService;
 
 public class MyDropListener extends ViewerDropAdapter {
 
@@ -34,7 +34,7 @@ public class MyDropListener extends ViewerDropAdapter {
 		  Object target = getCurrentTarget();
 		  File destination = new File( ( String) (data));
 		  if(target instanceof Episode){
-			  ModelService3.getInstance().matchfile(destination,(Episode) target);
+			  ModelService.getInstance().matchfile(destination,(Episode) target);
 			  eventBroker.send(AppConstants.MATCH_FILE_EVENT, "test");
 		  }
 	    return false;

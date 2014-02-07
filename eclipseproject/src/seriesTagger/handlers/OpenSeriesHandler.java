@@ -15,7 +15,7 @@ import seriesTagger.datamodel.DataModel.Episode;
 import seriesTagger.datamodel.DataModel.Series;
 import seriesTagger.datamodel.EpguideSeriesContentProvider;
 import seriesTagger.datamodel.EpguideSeriesLabelProvider;
-import seriesTagger.datamodel.ModelService3;
+import seriesTagger.datamodel.ModelService;
 import seriesTagger.read.ReadFromInternet;
 
 /* This Handler opens a Dialog that lets you choose your series. */
@@ -51,7 +51,7 @@ public class OpenSeriesHandler {
 		List<Episode> ls1 = ReadFromInternet.getEpguidesEpisode2(tvrage);
 
 		// put the data back
-		ModelService3.getInstance().episodesList = ls1;
+		ModelService.getInstance().episodesList = ls1;
 
 		// inform others that the event list has been loaded
 		eventBroker.send(AppConstants.EPISODE_LIST_LOADED, null);

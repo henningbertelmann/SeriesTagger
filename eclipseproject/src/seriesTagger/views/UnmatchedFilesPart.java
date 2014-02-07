@@ -27,7 +27,7 @@ import org.eclipse.swt.widgets.Table;
 
 import seriesTagger.AppConstants;
 import seriesTagger.datamodel.DataModel;
-import seriesTagger.datamodel.ModelService3;
+import seriesTagger.datamodel.ModelService;
 import seriesTagger.dnd.MyDragListener;
 
 public class UnmatchedFilesPart {
@@ -75,7 +75,7 @@ public class UnmatchedFilesPart {
 				return new Object[]{};
 			}
 		});
-		tableViewer.setInput(ModelService3.getInstance().fileList);
+		tableViewer.setInput(ModelService.getInstance().fileList);
 		
 		tableViewer.getTable().addSelectionListener(new SelectionListener(){
 
@@ -107,7 +107,7 @@ public class UnmatchedFilesPart {
 	public void onNewFilesAdded (@UIEventTopic(AppConstants.NEW_FILES_EVENT) Object data)
 	{
 		System.out.println(data);
-		tableViewer.setInput(ModelService3.getInstance());
+		tableViewer.setInput(ModelService.getInstance());
 		
 	}
 	
@@ -115,7 +115,7 @@ public class UnmatchedFilesPart {
 	public void onFileMatched (@UIEventTopic(AppConstants.MATCH_FILE_EVENT) Object data)
 	{
 		System.out.println(data);
-		tableViewer.setInput(ModelService3.getInstance());
+		tableViewer.setInput(ModelService.getInstance());
 		
 	}
 	
