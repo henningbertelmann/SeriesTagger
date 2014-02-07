@@ -114,4 +114,13 @@ public class SeriesView {
 
 	}
 
+	@Inject
+	@Optional
+	public void onEpisodeListLoaded(
+			@UIEventTopic(AppConstants.EPISODE_LIST_LOADED) Object data) {
+		System.out.println(data);
+		treeViewer.setInput(ModelService3.getInstance().episodesList);
+
+	}
+
 }
