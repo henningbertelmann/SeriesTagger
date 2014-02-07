@@ -35,7 +35,6 @@
       </children>
     </trimBars>
   </children>
-  <handlers xmi:id="_iDvV61AtEeO_loYmwT_FIw" contributionURI="bundleclass://SeriesTagger3/seriesTagger.handlers.QuitHandler" command="_iDvV6lAtEeO_loYmwT_FIw"/>
   <handlers xmi:id="_iDvV71AtEeO_loYmwT_FIw" contributionURI="bundleclass://SeriesTagger3/seriesTagger.handlers.OpenFilesHandler" command="_iDvV7lAtEeO_loYmwT_FIw"/>
   <handlers xmi:id="_iDvV8lAtEeO_loYmwT_FIw" contributionURI="bundleclass://SeriesTagger3/seriesTagger.handlers.OpenSeriesHandler" command="_iDvV8VAtEeO_loYmwT_FIw"/>
   <handlers xmi:id="_iDvV9VAtEeO_loYmwT_FIw" contributionURI="bundleclass://SeriesTagger3/seriesTagger.handlers.AboutHandler" command="_iDvV9FAtEeO_loYmwT_FIw"/>
@@ -49,7 +48,6 @@
     <children xmi:id="_iDvV4lAtEeO_loYmwT_FIw" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
     <children xmi:id="_iDvV41AtEeO_loYmwT_FIw" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
   </rootContext>
-  <commands xmi:id="_iDvV6lAtEeO_loYmwT_FIw" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
   <commands xmi:id="_iDvV7lAtEeO_loYmwT_FIw" elementId="SeriesTagger3.open" commandName="openFilesCommand"/>
   <commands xmi:id="_iDvV8VAtEeO_loYmwT_FIw" elementId="org.eclipse.ui.file.save" commandName="openSeriesCommand"/>
   <commands xmi:id="_iDvV9FAtEeO_loYmwT_FIw" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>

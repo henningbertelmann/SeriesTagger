@@ -37,11 +37,7 @@ public class SeriesView {
 	public TreeViewer treeViewer;
 	private static String EPISODE_AT_MOUSE_CLICK = "episode_at_mouse_click";
 
-	@Inject
-	public SeriesView() {
-		// TODO Your code here
-	}
-
+	
 	@PostConstruct
 	public void postConstruct(Composite parent, final IEventBroker eventBroker,
 			EMenuService menuService, final IEclipseContext ctx) {
