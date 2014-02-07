@@ -1,6 +1,8 @@
  
 package seriesTagger.views;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
@@ -9,14 +11,18 @@ import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.di.UIEventTopic;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 import seriesTagger.AppConstants;
 import seriesTagger.datamodel.DataModel.Episode;
+import seriesTagger.datamodel.ModelService;
 
 public class DetailsView {
 	private Text text;
@@ -50,6 +56,22 @@ public class DetailsView {
 		
 		text_1 = new Text(snippetDetailsComposite, SWT.BORDER);
 		text_1.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		new Label(snippetDetailsComposite, SWT.NONE);
+		
+		Button btnSaveEpisode = new Button(snippetDetailsComposite, SWT.NONE);
+		btnSaveEpisode.setText("Save Episode");
+		btnSaveEpisode.addSelectionListener(new SelectionAdapter() {
+		      @Override
+		      public void widgetSelected(SelectionEvent e) {
+		    	  List<Episode> ls = ModelService.getInstance().episodesList;
+		    	  for(Episode ep : ls){
+		    		  if(ep.filename!=null && !ep.isSaved()){
+		    			  ep.save(AppConstants.VIDEOS_ROOT_FOLDER);
+		    		  }
+		    	  }
+		        
+		      }
+		    });
 		logger.info("Details view created");
 	}
 	

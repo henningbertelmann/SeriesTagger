@@ -12,6 +12,7 @@ public class DataModel {
 		public String series_name;
 		public String file;
 		public File filename;
+		boolean saved;
 
 		public String toString() {
 
@@ -26,9 +27,26 @@ public class DataModel {
 			this.title = title;
 			this.series_name = series_name;
 			this.file = null;
+			this.saved=false;
+		}
+
+		public boolean isSaved() {
+			return saved;
 		}
 
 		public Episode() {
+		}
+		
+		public void save(String videosRootFolder){
+			String newfile = videosRootFolder + "/" + this.series_name + "/"
+		                     + "S" + season_number + "E" + episode_number
+		 					+ " - " + title;
+			System.out.println(newfile);
+			System.out.println(this.filename.getAbsolutePath());
+			this.filename.renameTo(new File(newfile));
+			System.out.println(this.filename);
+			
+			
 		}
 
 	}
