@@ -67,10 +67,10 @@ public class DataModel {
 			 * boolean b = this.filename.renameTo(nf); System.out.println(b);
 			 * System.out.println(this.filename);
 			 */
-
+			Path source = Paths.get(this.filename.getAbsolutePath());
+			Path target = Paths.get(nf.getAbsolutePath());
 			try {
-				Path source = Paths.get(this.filename.getAbsolutePath());
-				Path target = Paths.get(nf.getAbsolutePath());
+
 				System.out.println(source.toFile().exists());
 				Files.move(source, target);
 				System.out.println(source.toFile().getAbsolutePath() + " -> "
@@ -78,7 +78,11 @@ public class DataModel {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				return;
 			}
+
+			this.filename = target.toFile();
+			this.saved = true;
 
 		}
 

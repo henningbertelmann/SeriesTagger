@@ -28,8 +28,8 @@ import org.eclipse.swt.widgets.TreeItem;
 import seriesTagger.AppConstants;
 import seriesTagger.datamodel.DataModel.Episode;
 import seriesTagger.datamodel.EpisodesListContentProvider;
-import seriesTagger.datamodel.ModelService;
 import seriesTagger.datamodel.EpisodesListLabelProvider;
+import seriesTagger.datamodel.ModelService;
 import seriesTagger.dnd.MyDropListener;
 
 public class SeriesView {
@@ -37,7 +37,6 @@ public class SeriesView {
 	public TreeViewer treeViewer;
 	private static String EPISODE_AT_MOUSE_CLICK = "episode_at_mouse_click";
 
-	
 	@PostConstruct
 	public void postConstruct(Composite parent, final IEventBroker eventBroker,
 			EMenuService menuService, final IEclipseContext ctx) {
@@ -114,6 +113,15 @@ public class SeriesView {
 	@Optional
 	public void onEpisodeListLoaded(
 			@UIEventTopic(AppConstants.EPISODE_LIST_LOADED) Object data) {
+		System.out.println(data);
+		treeViewer.setInput(ModelService.getInstance().episodesList);
+
+	}
+
+	@Inject
+	@Optional
+	public void onFileSaved(
+			@UIEventTopic(AppConstants.SAVED_FILE_EVENT) Object data) {
 		System.out.println(data);
 		treeViewer.setInput(ModelService.getInstance().episodesList);
 

@@ -1,1 +1,1 @@
-Seriest Tagger project
+The Series Tagger Application helps you
