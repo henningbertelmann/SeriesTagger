@@ -35,7 +35,6 @@
       </children>
     </trimBars>
   </children>
-  <handlers xmi:id="_iDvV61AtEeO_loYmwT_FIw" contributionURI="bundleclass://SeriesTagger3/seriesTagger.handlers.QuitHandler" command="_iDvV6lAtEeO_loYmwT_FIw"/>
   <handlers xmi:id="_iDvV71AtEeO_loYmwT_FIw" contributionURI="bundleclass://SeriesTagger3/seriesTagger.handlers.OpenFilesHandler" command="_iDvV7lAtEeO_loYmwT_FIw"/>
   <handlers xmi:id="_iDvV8lAtEeO_loYmwT_FIw" contributionURI="bundleclass://SeriesTagger3/seriesTagger.handlers.OpenSeriesHandler" command="_iDvV8VAtEeO_loYmwT_FIw"/>
   <handlers xmi:id="_iDvV9VAtEeO_loYmwT_FIw" contributionURI="bundleclass://SeriesTagger3/seriesTagger.handlers.AboutHandler" command="_iDvV9FAtEeO_loYmwT_FIw"/>

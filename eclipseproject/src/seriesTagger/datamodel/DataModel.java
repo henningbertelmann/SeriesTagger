@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +31,7 @@ public class DataModel {
 			this.title = title;
 			this.series_name = series_name;
 			this.file = null;
-			this.saved=false;
+			this.saved = false;
 		}
 
 		public boolean isSaved() {
@@ -41,49 +40,49 @@ public class DataModel {
 
 		public Episode() {
 		}
-		
-		public void save(String videosRootFolder){
+
+		public void save(String videosRootFolder) {
+			// create folder structure, if necessary
+
 			String newfile = videosRootFolder /* + "/" + this.series_name + "/" */
-		                     + "S" + season_number + "E" + episode_number
-		 					+ " - " + title;
+					+ "\\" + "S" + season_number + "E" + episode_number + " - "
+					+ title;
 			System.out.println(newfile);
 			System.out.println(this.filename.getAbsolutePath());
-			
+
 			// Check if file exits at this place
-			if(! this.filename.exists()){
+			if (!this.filename.exists()) {
 				System.out.println("datei existiert ueberhaupt gar nicht");
 				return;
 			}
-			
+
 			// check, if target file already exists
 			File nf = new File(newfile);
-			if( nf.exists()){
+			if (nf.exists()) {
 				System.out.println("target existiert schon");
 				return;
 			}
-			
-			boolean b = this.filename.renameTo(nf);
-			System.out.println(b);
-			System.out.println(this.filename);
+
+			/*
+			 * boolean b = this.filename.renameTo(nf); System.out.println(b);
+			 * System.out.println(this.filename);
+			 */
+
 			try {
 				Path source = Paths.get(this.filename.getAbsolutePath());
 				Path target = Paths.get(nf.getAbsolutePath());
 				System.out.println(source.toFile().exists());
-				Files.move(source,target);
+				Files.move(source, target);
+				System.out.println(source.toFile().getAbsolutePath() + " -> "
+						+ target.toFile().getAbsolutePath());
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				System.out.println("alles scheiße hier");
-			} 
-			
-			
+			}
+
 		}
 
 	}
-
-	
-
-	
 
 	public List<File> fileList;
 	public List<Episode> episodesList;
