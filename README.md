@@ -1,3 +1,8 @@
+SeriesTagger
+=============
+
+An Eclipse-RCP Application which helps you to organise your episodes for your series on your computer.
+
 The Series Tagger Application helps you to organize your series on your computer.
 
 It also serves as an example for an Eclipse RCP Application, And I used this application to learn this application framework. Therefor it makes heavily usage of this frameworks and always tries to go for the RCP way.
