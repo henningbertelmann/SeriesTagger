@@ -29,6 +29,8 @@ import seriesTagger.AppConstants;
 import seriesTagger.datamodel.DataModel;
 import seriesTagger.datamodel.ModelService;
 import seriesTagger.dnd.MyDragListener;
+import seriesTagger.dnd.MyDropListener;
+import seriesTagger.dnd.MyDropListener1;
 
 public class UnmatchedFilesPart {
 	private TableViewer tableViewer;
@@ -52,6 +54,8 @@ public class UnmatchedFilesPart {
 		
 		 int operations = DND.DROP_COPY| DND.DROP_MOVE;
 		 Transfer[] transferTypes = new Transfer[]{TextTransfer.getInstance()};
+		 tableViewer.addDropSupport(operations, transferTypes,
+					new MyDropListener1(tableViewer, eventBroker));
 		 tableViewer.addDragSupport(operations, transferTypes , new MyDragListener(tableViewer));
 		
 		tableViewer.setContentProvider(new IStructuredContentProvider() {

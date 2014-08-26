@@ -1,9 +1,13 @@
-package seriesTagger.views;
+ package seriesTagger.views;
 
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.core.services.log.Logger;
@@ -70,6 +74,29 @@ public class DetailsView {
 				List<Episode> ls = ModelService.getInstance().episodesList;
 				for (Episode ep : ls) {
 					if (ep.filename != null && !ep.isSaved()) {
+												
+				 
+						int dialogButton = JOptionPane.YES_NO_OPTION;
+		                JOptionPane.showConfirmDialog (null, "Bennenungsoption anzeigen?","Benennungsoption",dialogButton);
+
+		                if(dialogButton == JOptionPane.YES_OPTION){
+		                
+		                	JFrame frame = new JFrame("InputDialog Example #1");
+		                	int messageType = JOptionPane.INFORMATION_MESSAGE;
+		                    String answer = JOptionPane.showInputDialog(frame, 
+		                       "Bennennung:", 
+		                       "Bennennungsoption", messageType); 
+		                    
+		                    System.out.println(answer);
+		                    
+//		                    seriesTagger.datamodel.DataModel. = answer;
+		                    
+		                    ep.save(AppConstants.VIDEOS_ROOT_FOLDER,answer);
+		                    
+		                }
+		                else System.exit(0);	
+		                
+		                
 						ep.save(AppConstants.VIDEOS_ROOT_FOLDER);
 					}
 				}

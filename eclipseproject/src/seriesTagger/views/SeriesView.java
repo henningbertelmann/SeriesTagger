@@ -30,6 +30,8 @@ import seriesTagger.datamodel.DataModel.Episode;
 import seriesTagger.datamodel.EpisodesListContentProvider;
 import seriesTagger.datamodel.EpisodesListLabelProvider;
 import seriesTagger.datamodel.ModelService;
+import seriesTagger.dnd.MyDragListener;
+import seriesTagger.dnd.MyDragListener1;
 import seriesTagger.dnd.MyDropListener;
 
 public class SeriesView {
@@ -57,6 +59,7 @@ public class SeriesView {
 		Tree tree = treeViewer.getTree();
 		tree.setHeaderVisible(true);
 		tree.setLinesVisible(true);
+		treeViewer.addDragSupport(operations, transferTypes , new MyDragListener1(treeViewer));
 
 		tree.addSelectionListener(new SelectionListener() {
 

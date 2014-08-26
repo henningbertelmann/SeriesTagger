@@ -85,6 +85,50 @@ public class DataModel {
 			this.saved = true;
 
 		}
+		
+		public void save(String videosRootFolder, String filename) {
+			// create folder structure, if necessary
+
+			String newfile = videosRootFolder /* + "/" + this.series_name + "/" */
+					+ "\\" + filename;
+			System.out.println(newfile);
+			System.out.println(this.filename.getAbsolutePath());
+
+			// Check if file exits at this place
+			if (!this.filename.exists()) {
+				System.out.println("datei existiert ueberhaupt gar nicht");
+				return;
+			}
+
+			// check, if target file already exists
+			File nf = new File(newfile);
+			if (nf.exists()) {
+				System.out.println("target existiert schon");
+				return;
+			}
+
+			/*
+			 * boolean b = this.filename.renameTo(nf); System.out.println(b);
+			 * System.out.println(this.filename);
+			 */
+			Path source = Paths.get(this.filename.getAbsolutePath());
+			Path target = Paths.get(nf.getAbsolutePath());
+			try {
+
+				System.out.println(source.toFile().exists());
+				Files.move(source, target);
+				System.out.println(source.toFile().getAbsolutePath() + " -> "
+						+ target.toFile().getAbsolutePath());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return;
+			}
+
+			this.filename = target.toFile();
+			this.saved = true;
+
+		}
 
 	}
 

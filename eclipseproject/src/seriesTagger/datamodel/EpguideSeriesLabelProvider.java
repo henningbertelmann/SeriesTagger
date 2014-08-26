@@ -10,9 +10,8 @@ public class EpguideSeriesLabelProvider extends LabelProvider {
 			EpguideSerie series = (EpguideSerie) element;
 			return series.title;
 		} else {
-			assert false;
+			return element.toString();
 		}
-		return "";
 
 	}
 
@@ -20,5 +19,6 @@ public class EpguideSeriesLabelProvider extends LabelProvider {
 	public String getText(Object element) {
 		return SeriesToString(element);
 	}
-
+	
+	
 }

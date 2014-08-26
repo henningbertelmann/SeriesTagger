@@ -25,6 +25,7 @@
     <mainMenu xmi:id="_iDvV-FAtEeO_loYmwT_FIw" elementId="menu:org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_iDvV-VAtEeO_loYmwT_FIw" label="File"/>
       <children xsi:type="menu:Menu" xmi:id="_iDvV_VAtEeO_loYmwT_FIw" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_djJIICh8EeSQRrJGn9pH4g" elementId="" label="Speicherort ändern.." command="_7zuKsCh8EeSQRrJGn9pH4g"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_iDvV_lAtEeO_loYmwT_FIw" label="About" command="_iDvV9FAtEeO_loYmwT_FIw"/>
       </children>
     </mainMenu>
@@ -38,6 +39,7 @@
   <handlers xmi:id="_iDvV71AtEeO_loYmwT_FIw" contributionURI="bundleclass://SeriesTagger3/seriesTagger.handlers.OpenFilesHandler" command="_iDvV7lAtEeO_loYmwT_FIw"/>
   <handlers xmi:id="_iDvV8lAtEeO_loYmwT_FIw" contributionURI="bundleclass://SeriesTagger3/seriesTagger.handlers.OpenSeriesHandler" command="_iDvV8VAtEeO_loYmwT_FIw"/>
   <handlers xmi:id="_iDvV9VAtEeO_loYmwT_FIw" contributionURI="bundleclass://SeriesTagger3/seriesTagger.handlers.AboutHandler" command="_iDvV9FAtEeO_loYmwT_FIw"/>
+  <handlers xmi:id="_3Pl4MCh8EeSQRrJGn9pH4g" elementId="" contributionURI="bundleclass://SeriesTagger3/seriesTagger.handlers.SavePlaceHandler" command="_7zuKsCh8EeSQRrJGn9pH4g"/>
   <bindingTables xmi:id="_iDvV7FAtEeO_loYmwT_FIw" bindingContext="_iDvV4VAtEeO_loYmwT_FIw">
     <bindings xmi:id="_iDvV7VAtEeO_loYmwT_FIw" keySequence="M1+Q" command="_iDvV6lAtEeO_loYmwT_FIw"/>
     <bindings xmi:id="_iDvV8FAtEeO_loYmwT_FIw" keySequence="M1+O" command="_iDvV7lAtEeO_loYmwT_FIw"/>
@@ -52,6 +54,7 @@
   <commands xmi:id="_iDvV7lAtEeO_loYmwT_FIw" elementId="SeriesTagger3.open" commandName="openFilesCommand"/>
   <commands xmi:id="_iDvV8VAtEeO_loYmwT_FIw" elementId="org.eclipse.ui.file.save" commandName="openSeriesCommand"/>
   <commands xmi:id="_iDvV9FAtEeO_loYmwT_FIw" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <commands xmi:id="_7zuKsCh8EeSQRrJGn9pH4g" elementId="org.eclipse.ui.window.preferences" commandName="preferencesCommand"/>
   <addons xmi:id="_iDvV5FAtEeO_loYmwT_FIw" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_iDvV5VAtEeO_loYmwT_FIw" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_iDvV5lAtEeO_loYmwT_FIw" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>

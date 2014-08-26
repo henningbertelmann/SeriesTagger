@@ -26,6 +26,8 @@ public class ReadFromInternet {
 		for (String s : ls)
 			System.out.println(s);
 	}
+	
+	
 
 	/* Get a list from all the series catagolized at epguides.com */
 	public static List<EpguideSerie> getEpguideSeries() {
@@ -185,6 +187,8 @@ public class ReadFromInternet {
 
 		return episodeList;
 	}
+	
+	
 
 	
 }
